@@ -9,5 +9,8 @@ Give the bot 10 seconds to run before running a command, this is because I don't
 Simply join a voice channel as an admin and type !cv cases.
 Feel free to type !cv help to view all commands.
 
+# Why is your code so sloppy? 
+I am extremely new to Javascript so I am still unfamiliar with how anything works. Coming from just Java, C# and C++, this feels a little different. As for my bad programming practices, I plan on fixing everything in the near future, this was just something to teach myself!
+
 # Where are the stats coming from?
 https://corona.lmao.ninja/all

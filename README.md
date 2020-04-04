@@ -5,6 +5,8 @@ A simple discord bot that will track the current amount Covid-19 cases, and any 
 Simply replace the token string in config.json with your own bot token. After that, simply run bot.js
 Give the bot 10 seconds to run before running a command, this is because I don't know javascript and this is my only way of setting an interval.
 
+Requires Nodejs 12.x obviously.
+
 # How to use the bot?
 Simply join a voice channel as an admin and type !cv cases.
 Feel free to type !cv help to view all commands.

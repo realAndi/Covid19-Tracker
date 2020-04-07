@@ -141,7 +141,7 @@ client.on("message", (message) => {
             else if(command === 'critical' && message.member.hasPermission("MANAGE_CHANNELS"))
             {
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv countries`` again! Be sure the bot is able to see the voice channel!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv critical`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;

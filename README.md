@@ -8,8 +8,9 @@ Give the bot 10 seconds to run before running a command, this is because I don't
 Requires Nodejs 12.x obviously.
 
 # How to use the bot?
-Simply join a voice channel as an admin and type !cv cases.
+Simply join a voice channel with the permissions to manage channels and type !cv cases.
 Feel free to type !cv help to view all commands.
+Be sure the bot has access to view the channels so it can update!
 
 # Why is your code so sloppy? 
 I am extremely new to Javascript so I am still unfamiliar with how anything works. Coming from just Java, C# and C++, this feels a little different. As for my bad programming practices, I plan on fixing everything in the near future, this was just something to teach myself!

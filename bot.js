@@ -27,81 +27,188 @@ client.on("message", (message) => {
     
         const args = message.content.slice(prefix.length).split(' ');
         const command = args.shift().toLowerCase();
-        if(command === 'cases' && message.member.hasPermission("ADMINISTRATOR")){
+        if(command === 'cases' && message.member.hasPermission("MANAGE_CHANNELS")){
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv cases`` again!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv cases`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;
                     voiceChannel.setName('Cases: ' + importedJSON.cases);
-                    function ChannelRefresh(){
-                        voiceChannel.setName('Cases: ' + importedJSON.cases);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
+                        function ChannelRefresh(){
+                            voiceChannel.setName('Cases: ' + importedJSON.cases);
+                        }
+                        setInterval(ChannelRefresh,10000);
                     }
-                    setInterval(ChannelRefresh,10000);
-                }
-
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+                 }
             }
-        else if(command === 'deaths' && message.member.hasPermission("ADMINISTRATOR"))
+        else if(command === 'deaths' && message.member.hasPermission("MANAGE_CHANNELS"))
             {
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv deaths`` again!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv deaths`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;
                     voiceChannel.setName('Deaths: ' + importedJSON.deaths);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
                     function ChannelRefresh(){
                         voiceChannel.setName('Deaths: ' + importedJSON.deaths);
-                    }
+                        }
                     setInterval(ChannelRefresh,10000);
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
                 }
 
             }
-        else if(command === 'recovered' && message.member.hasPermission("ADMINISTRATOR"))
+        else if(command === 'recovered' && message.member.hasPermission("MANAGE_CHANNELS"))
             {
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv recovered`` again!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv recovered`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;
                     voiceChannel.setName('Recovered: ' + importedJSON.recovered);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
                     function ChannelRefresh(){
                         voiceChannel.setName('Recovered: ' + importedJSON.recovered);
-                    }
+                        }
                     setInterval(ChannelRefresh,10000);
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
                 }
 
             }
-        else if(command === 'active' && message.member.hasPermission("ADMINISTRATOR"))
+        else if(command === 'active' && message.member.hasPermission("MANAGE_CHANNELS"))
             {
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv active`` again!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv active`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;
                     voiceChannel.setName('Active: ' + importedJSON.active);
+                    message.channel.send("Channel renamed!");
+                    try{
                     function ChannelRefresh(){
                         voiceChannel.setName('Active: ' + importedJSON.active);
-                    }
+                        }
                     setInterval(ChannelRefresh,10000);
-                }
-
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+                 }
             }
-        else if(command === 'countries' && message.member.hasPermission("ADMINISTRATOR"))
+        else if(command === 'countries' && message.member.hasPermission("MANAGE_CHANNELS"))
             {
                 if(!message.member.voice.channelID)
-                    return message.channel.send("Join a voice channel and enter the command ``!cv countries`` again!");
+                    return message.channel.send("Join a voice channel and enter the command ``!cv countries`` again! Be sure the bot is able to see the voice channel!");
                 else
                 {
                     var voiceChannel = message.member.voice.channel;
                     voiceChannel.setName('Countries: ' + importedJSON.affectedCountries);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
                     function ChannelRefresh(){
                         voiceChannel.setName('Countries: ' + importedJSON.affectedCountries);
-                    }
+                        }
                     setInterval(ChannelRefresh,10000);
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
                 }
 
             }
-        else if(command === 'help' && message.member.hasPermission("ADMINISTRATOR"))
+            else if(command === 'critical' && message.member.hasPermission("MANAGE_CHANNELS"))
+            {
+                if(!message.member.voice.channelID)
+                    return message.channel.send("Join a voice channel and enter the command ``!cv countries`` again! Be sure the bot is able to see the voice channel!");
+                else
+                {
+                    var voiceChannel = message.member.voice.channel;
+                    voiceChannel.setName('Critical: ' + importedJSON.critical);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
+                    function ChannelRefresh(){
+                        voiceChannel.setName('Critical: ' + importedJSON.critical);
+                        }
+                    setInterval(ChannelRefresh,10000);
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+
+                }
+
+            }
+            else if(command === 'todaycases' && message.member.hasPermission("MANAGE_CHANNELS"))
+            {
+                if(!message.member.voice.channelID)
+                    return message.channel.send("Join a voice channel and enter the command ``!cv todaycases`` again! Be sure the bot is able to see the voice channel!");
+                else
+                {
+                    var voiceChannel = message.member.voice.channel;
+                    voiceChannel.setName('Todays Cases: ' + importedJSON.todayCases);
+                    message.channel.send("Channel renamed!");
+                    try
+                    {
+                    function ChannelRefresh(){
+                        voiceChannel.setName('Todays Case: ' + importedJSON.todayCases);
+                        }
+                    setInterval(ChannelRefresh,10000);  
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+                }
+
+            }
+            else if(command === 'todaydeaths' && message.member.hasPermission("MANAGE_CHANNELS"))
+            {
+                if(!message.member.voice.channelID)
+                    return message.channel.send("Join a voice channel and enter the command ``!cv todaydeaths`` again! Be sure the bot is able to see the voice channel!");
+                else
+                {
+                    var voiceChannel = message.member.voice.channel;
+                    voiceChannel.setName('Todays Deaths: ' + importedJSON.todayDeaths);
+                    message.channel.send("Channel");
+                    try
+                    {
+                    function ChannelRefresh(){
+                        voiceChannel.setName('Todays Deaths: ' + importedJSON.todayDeaths);
+                        }
+                    setInterval(ChannelRefresh,10000);
+                    }
+                    catch(err)
+                    {
+                        console.log(err);
+                    }
+                }
+
+            }
+        else if(command === 'help' && message.member.hasPermission("MANAGE_CHANNELS"))
         {
             const helpEmbed = new Discord.MessageEmbed()
                 .setColor('#0099ff')
@@ -111,12 +218,12 @@ client.on("message", (message) => {
                 .setDescription('Covid-19 Tracker is an easy to use bot that applies the https://corona.lmao.ninja/all JSON to Voice Channels in order to keep you updated on the latest updates!')
                 .setThumbnail('https://www.dhs.gov/sites/default/files/images/20_0305_opa_coronavirus-micro.jpg')
                 .addFields(
-                    { name: 'Commands', value: '- !cv cases\n- !cv active\n- !cv deaths\n- !cv recovered\n- !cv countries' }
+                    { name: 'Commands', value: '- !cv cases\n- !cv active\n- !cv deaths\n- !cv recovered\n- !cv countries\n - !cv critical\n - !cv todaycases\n - !cv todaydeaths' }
                 );
             return message.channel.send(helpEmbed);
         }
         else if (message.content.startsWith(`${prefix}`)) {
-            message.channel.send("That isn't a valid command, please try again!");
+            message.channel.send("That isn't a valid command, type ``!cv help`` for more info!");
             }
 
     });

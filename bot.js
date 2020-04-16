@@ -6,7 +6,7 @@ var importedJSON;
 
 function intervalFunc() {
     console.log("I just updated!");
-    request('https://corona.lmao.ninja/all', function (error, response, body) {
+    request('https://corona.lmao.ninja/v2/all', function (error, response, body) {
         if (!error && response.statusCode == 200) {
     importedJSON = JSON.parse(body);
      console.log("Current parsesd JSON\n" + body);
